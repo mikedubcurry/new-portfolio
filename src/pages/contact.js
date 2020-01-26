@@ -1,11 +1,12 @@
-  import React from 'react'
+import React from "react"
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default function Contact() {
   return (
-    <div>
-      contact
-    </div>
+    <Layout>
+      <SEO title="CONTACT" />
+    </Layout>
   )
 }
-  
