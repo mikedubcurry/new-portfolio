@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled, { keyframes } from "styled-components"
 
 const transforms = {
@@ -7,7 +7,7 @@ const transforms = {
       transform: translate(0);
     }
     to {
-      transform: translate(-5px, 5px);
+      transform: translate(-7px, 5px);
     }
   `,
   center: keyframes`
@@ -23,7 +23,7 @@ const transforms = {
       transform: translate(0);
     }
     to {
-      transform: translate(5px, 5px);
+      transform: translate(7px, 5px);
     }
   `,
 }
@@ -34,7 +34,7 @@ const shadows = {
       box-shadow: none;
     }
     to{
-      box-shadow: 4px -4px 8px 0px rgba(0,0,0,0.37);
+      box-shadow: 4px -4px 4px 0px #999;
     }
   `,
   center: keyframes`
@@ -42,7 +42,7 @@ const shadows = {
       box-shadow: none;
     }
     to{
-      box-shadow: 0px -4px 8px 2px rgba(0,0,0,0.37);
+      box-shadow: 0px -4px 4px 2px #999;
     }
   `,
   right: keyframes`
@@ -50,7 +50,7 @@ const shadows = {
       box-shadow: none;
     }
     to{
-      box-shadow: -4px -4px 8px 0px rgba(0,0,0,0.37);
+      box-shadow: -4px -4px 4px 0px #999;
     }
   `,
 }
@@ -60,7 +60,7 @@ const fadeIn = keyframes`
     background: #ddd;
   }
   to {
-    background: #bbb;
+    background: #f0f0f0;
   }
 `
 
@@ -73,7 +73,7 @@ const PanelBody = styled.div.attrs(props => ({
   height: 80%;
   width: calc(90% / ${props => props.ct});
   border-radius: 10px;
-  animation: ${fadeIn} 1s .5s ease forwards,
+  animation: ${fadeIn} 1s 0.5s ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":
@@ -84,7 +84,7 @@ const PanelBody = styled.div.attrs(props => ({
             return transforms["right"]
         }
       }}
-      .5s 1.5s ease forwards,
+      0.5s 1.5s ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":
@@ -95,13 +95,10 @@ const PanelBody = styled.div.attrs(props => ({
             return shadows["right"]
         }
       }}
-      .5s 1.5s ease forwards;
+      0.5s 1.5s ease forwards;
 `
 
 export default function Panel({ children, ct, pos }) {
-  // useEffect(() => {
-
-  // })
   return (
     <PanelBody pos={pos} ct={ct}>
       {children}

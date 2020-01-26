@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-
 const NavBar = styled.nav`
   width: 50%;
   display: flex;
@@ -22,11 +21,11 @@ const NavBar = styled.nav`
 `
 
 const Nav = () => (
-    <NavBar>
-      <Link to="/">HOME</Link>
-      <Link to="/resume">RESUME</Link>
-      <Link to="/contact">CONTACT</Link>
-    </NavBar>
+  <NavBar>
+    <Link to="/">PROJECTS</Link>
+    <Link to="/resume">RESUME</Link>
+    <Link to="/contact">CONTACT</Link>
+  </NavBar>
 )
 
 export default Nav

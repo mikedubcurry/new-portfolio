@@ -78,7 +78,7 @@ select {
 
 body {
   background-color: #444;
-  background-image: radial-gradient(#5c0497, #444);
+  background-image: radial-gradient(#ff00ea, #ae00ff);
   position: relative;
   z-index: 1;
 }
@@ -110,5 +110,4 @@ main {
   background: #222;
   background-image: linear-gradient(to top, #69626d, #000);
   clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-
 }
