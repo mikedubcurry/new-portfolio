@@ -2,26 +2,31 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const Header = styled.header`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 
-  nav {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
+const NavBar = styled.nav`
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 3;
+  left: 25%;
+  top: 5%;
+  a {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    transform: translateY(-33%);
+    font-family: sans serif;
   }
 `
 
 const Nav = () => (
-  <Header>
-    <nav>
+    <NavBar>
       <Link to="/">HOME</Link>
-      <Link to="/resume">Resume</Link>
+      <Link to="/resume">RESUME</Link>
       <Link to="/contact">CONTACT</Link>
-    </nav>
-  </Header>
+    </NavBar>
 )
 
 export default Nav

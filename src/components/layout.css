@@ -78,28 +78,37 @@ select {
 
 body {
   background-color: #444;
-  background-image: radial-gradient(#b44, #444);
+  background-image: radial-gradient(#5c0497, #444);
+  position: relative;
+  z-index: 1;
 }
 main {
   width: 90%;
   height: 85vh;
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.75rem;
   left: 5%;
   border-radius: 4px;
   background: #ddd;
   padding: 2rem 4rem;
-  z-index: 2;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-header {
+.top-of-box {
   width: 90%;
   height: 5vh;
   position: absolute;
   left: 5%;
-  top: calc(15vh - 1rem - 5vh);
+  top: calc(15vh - 1.75rem - 5vh);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
   z-index: 1;
   background: #222;
-  background-image: linear-gradient(to top, #333, #000);
-  clip-path: polygon(10% 0,90% 0, 100% 100%, 0 100%);
+  background-image: linear-gradient(to top, #69626d, #000);
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+
 }
