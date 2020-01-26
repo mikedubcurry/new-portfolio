@@ -80,8 +80,11 @@ const PanelBody = styled.div.attrs(props => ({
             return transforms["left"]
           case "center":
             return transforms["center"]
+
           case "right":
             return transforms["right"]
+          default:
+            return transforms["center"]
         }
       }}
       0.5s 1.5s ease forwards,
@@ -93,6 +96,8 @@ const PanelBody = styled.div.attrs(props => ({
             return shadows["center"]
           case "right":
             return shadows["right"]
+          default:
+            return shadows["center"]
         }
       }}
       0.5s 1.5s ease forwards;

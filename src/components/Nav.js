@@ -17,14 +17,23 @@ const NavBar = styled.nav`
     font-size: 2rem;
     transform: translateY(-33%);
     font-family: sans serif;
+    transition: all .3s;
+    
+    &.current {
+      color: yellow;
+    }
+
+    &:hover {
+      transform: translateY(-45%);
+    }
   }
 `
 
 const Nav = () => (
   <NavBar>
-    <Link to="/">PROJECTS</Link>
-    <Link to="/resume">RESUME</Link>
-    <Link to="/contact">CONTACT</Link>
+    <Link activeClassName='current' to="/">PROJECTS</Link>
+    <Link activeClassName='current' to="/resume">RESUME</Link>
+    <Link activeClassName='current' to="/contact">CONTACT</Link>
   </NavBar>
 )
 
