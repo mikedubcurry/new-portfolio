@@ -13,8 +13,23 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-styled-components",
+      options: {
+        pure: true,
+        displayName: true,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,7 +1,7 @@
 import React from "react"
 
-import Nav from "./Nav"
 import "./layout.css"
+import Nav from "./Nav"
 
 const Layout = ({ children }) => (
   <>

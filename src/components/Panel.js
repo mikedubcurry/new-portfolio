@@ -73,7 +73,7 @@ const PanelBody = styled.div.attrs(props => ({
   height: 80%;
   width: calc(90% / ${props => props.ct});
   border-radius: 10px;
-  animation: ${fadeIn} 1s 0.5s ease forwards,
+  animation: ${fadeIn} .5s 0.2s ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":
@@ -87,7 +87,7 @@ const PanelBody = styled.div.attrs(props => ({
             return transforms["center"]
         }
       }}
-      0.5s 1.5s ease forwards,
+      0.5s 1s ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":
@@ -100,7 +100,7 @@ const PanelBody = styled.div.attrs(props => ({
             return shadows["center"]
         }
       }}
-      0.5s 1.5s ease forwards;
+      0.5s 1s ease forwards;
 `
 
 export default function Panel({ children, ct, pos }) {
