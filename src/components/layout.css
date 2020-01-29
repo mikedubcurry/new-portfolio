@@ -93,7 +93,7 @@ main {
   border-radius: 4px;
   background: #ddd;
   padding: 2rem 4rem;
-  z-index: 3;
+  z-index: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;

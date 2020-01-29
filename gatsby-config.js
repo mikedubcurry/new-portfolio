@@ -5,6 +5,7 @@ module.exports = {
     author: `Michael Curry`,
   },
   plugins: [
+    `gatsby-plugin-recaptcha`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
