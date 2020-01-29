@@ -49,5 +49,5 @@ function VerifyButton({ handleVerify }) {
 }
 
 function SubmitButton({ handleSubmit }) {
-  return <button>Submit</button>
+  return <button onClick={handleSubmit}>Submit</button>
 }
