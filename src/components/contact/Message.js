@@ -1,12 +1,21 @@
 import React, { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import styled from "styled-components"
+
+// create styles for form elements
+// create error styles to alert if a field is empty
+// display error text if exists
+
+import ContactForm from "./ContactForm"
 
 export default function Message() {
-  const { executeRecaptcha } = useGoogleReCaptcha()
   const [token, setToken] = useState("")
   const [message, setMessage] = useState("")
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
+  let error
+
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
   const handleVerify = async () => {
     if (!executeRecaptcha) {
@@ -30,16 +39,29 @@ export default function Message() {
     })
 
     const json = await response.json()
-    console.log(json)
+    // handle response from server
+    // errors should make sense to user or lock out bots
+    if (json.error) {
+      // handle error cases
+      console.log(json.error)
+      // console.log error codes and show user/bot verification failed.
+    }
+    setName("")
+    setEmail("")
+    setMessage("")
   }
 
   return (
     <>
+      <ContactForm
+        state={{ name, setName, email, setEmail, message, setMessage }}
+      />
       {!token ? (
         <VerifyButton handleVerify={handleVerify} />
       ) : (
         <SubmitButton handleSubmit={handleSubmit} />
       )}
+      {error && <p>{error}</p>}
     </>
   )
 }
