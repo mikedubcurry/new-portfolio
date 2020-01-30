@@ -20,6 +20,7 @@ const TextInput = styled.input`
 const Fields = styled.form`
   display: flex;
   flex-direction: column;
+  font-family: sans serif;
   width: 70%;
   height: 100%;
   margin: 0 auto;

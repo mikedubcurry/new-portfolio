@@ -1,11 +1,50 @@
 import React, { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import styled from "styled-components"
 
-// create styles for form elements
+import ContactForm from "./ContactForm"
+
 // create error styles to alert if a field is empty
 // display error text if exists
 
-import ContactForm from "./ContactForm"
+const FormButton = styled.button`
+  width: 80%;
+  align-self: center;
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: none;
+  padding: .5rem 1rem;
+  transition: all .2s;
+  color: #333;
+  font-family: sans serif;
+  font-size: .9rem;
+  height:  10%;
+`
+
+const Submit = styled(FormButton)`
+  background:  #75d0aa;
+
+  &:hover {
+    background: lightblue;
+  }
+`
+
+const Verify = styled(FormButton)`
+  background: darkorange;
+  font-size: .8rem;
+
+  &:hover {
+    background: orange;
+  }
+`
+
+function VerifyButton({ handleVerify }) {
+  return <Verify onClick={handleVerify}>Prove you're not a bot</Verify>
+}
+
+function SubmitButton({ handleSubmit }) {
+  return <Submit onClick={handleSubmit}>Submit</Submit>
+}
 
 export default function Message() {
   const [token, setToken] = useState("")
@@ -68,12 +107,4 @@ export default function Message() {
       {error && <p>{error}</p>}
     </>
   )
-}
-
-function VerifyButton({ handleVerify }) {
-  return <button onClick={handleVerify}>Prove you're not a bot</button>
-}
-
-function SubmitButton({ handleSubmit }) {
-  return <button onClick={handleSubmit}>Submit</button>
 }
