@@ -57,10 +57,10 @@ const shadows = {
 
 const fadeIn = keyframes`
   from {
-    background: #ddd;
+    opacity: 0;
   }
   to {
-    background: #f0f0f0;
+    opacity: 1;
   }
 `
 
@@ -68,12 +68,13 @@ const PanelBody = styled.div.attrs(props => ({
   ct: props.ct,
   pos: props.pos,
 }))`
-  background: #ddd;
+opacity: 0;
+  background: #f0f0f0;
   transition: all;
   height: 80%;
   width: calc(90% / ${props => props.ct});
   border-radius: 10px;
-  animation: ${fadeIn} .5s 0.2s ease forwards,
+  animation: ${fadeIn} 1s  ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":
