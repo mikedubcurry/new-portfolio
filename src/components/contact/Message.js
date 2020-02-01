@@ -4,34 +4,45 @@ import styled from "styled-components"
 
 import ContactForm from "./ContactForm"
 
-// create error styles to alert if a field is empty
-// display error text if exists
-
 const FormButton = styled.button`
   width: 80%;
   align-self: center;
   margin-top: 2rem;
   border-radius: 10px;
   border: none;
-  padding: .5rem 1rem;
-  transition: all .2s;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
   color: #333;
   font-family: sans serif;
-  font-size: .9rem;
-  height:  10%;
+  font-size: 0.9rem;
+  height: 10%;
+  font-weight: bold;
+
+  &:hover {
+    letter-spacing: 1px;
+  }
+
+  &:active {
+    letter-spacing: 0px;
+  }
 `
 
 const Submit = styled(FormButton)`
-  background:  #75d0aa;
+  background: #75d0aa;
 
   &:hover {
     background: lightblue;
+  }
+
+  &:disabled,
+  &[disabled="true"] {
+    color: #ddd !important;
   }
 `
 
 const Verify = styled(FormButton)`
   background: darkorange;
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   &:hover {
     background: orange;
@@ -51,7 +62,8 @@ export default function Message() {
   const [message, setMessage] = useState("")
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
-  let error
+  const [disabled, setDisabled] = useState(false)
+  const [errors, setErrors] = useState("")
 
   const { executeRecaptcha } = useGoogleReCaptcha()
 
@@ -72,6 +84,21 @@ export default function Message() {
 
     const body = { name, email, message, token }
 
+    if (!name) {
+      setErrors({ message: "Please enter your name.", input: "name" })
+      return
+    }
+
+    if (!email) {
+      setErrors({ message: "Please enter your email.", input: "email" })
+      return
+    }
+
+    if (!message) {
+      setErrors({ message: "Please enter a message.", input: "message" })
+      return
+    }
+
     const response = await fetch("http://localhost:3000/contact", {
       method: "post",
       headers: {
@@ -81,30 +108,34 @@ export default function Message() {
     })
 
     const json = await response.json()
-    // handle response from server
-    // errors should make sense to user or lock out bots
+
     if (json.error) {
-      // handle error cases
-      console.log(json.error)
-      // console.log error codes and show user/bot verification failed.
+      setErrors({ message: json.error })
+      return
     }
     setName("")
     setEmail("")
     setMessage("")
+    setDisabled(true)
   }
 
   return (
     <>
-      <ContactForm
-        state={{ name, setName, email, setEmail, message, setMessage }}
-      >
-        {!token ? (
-          <VerifyButton handleVerify={handleVerify} />
-        ) : (
-          <SubmitButton handleSubmit={handleSubmit} />
-        )}
-      </ContactForm>
-      {error && <p>{error}</p>}
+      {disabled ? (
+        "Thank you"
+      ) : (
+        <ContactForm
+          state={{ name, setName, email, setEmail, message, setMessage }}
+          err={errors}
+        >
+          {errors && <p>{errors.message}</p>}
+          {!token ? (
+            <VerifyButton handleVerify={handleVerify} />
+          ) : (
+            <SubmitButton handleSubmit={handleSubmit} />
+          )}
+        </ContactForm>
+      )}
     </>
   )
 }
