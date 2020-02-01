@@ -33,11 +33,6 @@ const Submit = styled(FormButton)`
   &:hover {
     background: lightblue;
   }
-
-  &:disabled,
-  &[disabled="true"] {
-    color: #ddd !important;
-  }
 `
 
 const Verify = styled(FormButton)`
