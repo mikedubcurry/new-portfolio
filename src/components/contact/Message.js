@@ -66,7 +66,7 @@ export default function Message() {
     e.preventDefault()
 
     if (!executeRecaptcha) {
-      console.log("ReCaptcha is not working")
+      setErrors({ message: "ReCaptcha is not working in your browser." })
       return
     }
     const result = await executeRecaptcha("contact")
@@ -114,8 +114,7 @@ export default function Message() {
       setMessage("")
       setDisabled(true)
     } catch (e) {
-      console.log(e)
-      setErrors({message: 'Contact form is out of order.'})
+      setErrors({ message: "Contact form is out of order." })
     }
   }
 

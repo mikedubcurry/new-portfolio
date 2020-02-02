@@ -1,7 +1,7 @@
 import React from "react"
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
-import {Info, Message} from "../components/contact/"
+import { Info, Message } from "../components/contact/"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Panel from "../components/Panel"

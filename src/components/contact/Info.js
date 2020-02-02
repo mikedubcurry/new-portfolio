@@ -1,5 +1,5 @@
 import React from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Text = styled.div`
   display: flex;
@@ -22,13 +22,15 @@ const Text = styled.div`
 export default function Info() {
   return (
     <Text>
-    <h1>Getting ahold of me</h1>
+      <h1>Getting ahold of me</h1>
       <p>
         I am currently seeking full-time employment opportunities or shorter
         term gigs so please feel free to send me a message. I will get back to
         you within a day or two.
       </p>
-      <p>Just enter your name, an email I can reach you at and a brief message. </p>
+      <p>
+        Just enter your name, an email I can reach you at and a brief message.{" "}
+      </p>
     </Text>
   )
 }

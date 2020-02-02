@@ -80,7 +80,6 @@ select {
 
 body {
   background-color: #7700ee;
-  /* background-image: radial-gradient(#ff00ea, #ae00ff); */
   position: relative;
   z-index: 1;
 }

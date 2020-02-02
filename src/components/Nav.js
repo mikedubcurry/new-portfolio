@@ -17,8 +17,8 @@ const NavBar = styled.nav`
     font-size: 2rem;
     transform: translateY(-33%);
     font-family: sans serif;
-    transition: all .3s;
-    
+    transition: all 0.3s;
+
     &.current {
       color: yellow;
     }
@@ -31,9 +31,15 @@ const NavBar = styled.nav`
 
 const Nav = () => (
   <NavBar>
-    <Link activeClassName='current' to="/">PROJECTS</Link>
-    <Link activeClassName='current' to="/resume">RESUME</Link>
-    <Link activeClassName='current' to="/contact">CONTACT</Link>
+    <Link activeClassName="current" to="/">
+      PROJECTS
+    </Link>
+    <Link activeClassName="current" to="/resume">
+      RESUME
+    </Link>
+    <Link activeClassName="current" to="/contact">
+      CONTACT
+    </Link>
   </NavBar>
 )
 

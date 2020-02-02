@@ -70,10 +70,8 @@ const Dots = styled.ul`
 `
 
 export default function ExpSwitcher(props) {
-  // exp = [ { title, company, start, end, duties, current } ]
   let exp = props.exp
   const [state, dispatch] = useReducer(reducer, { len: exp.length, curr: 0 })
-  // store first item in exp as 'current' state
 
   return (
     <>

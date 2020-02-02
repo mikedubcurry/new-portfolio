@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const SkillItem = styled.li`
   list-style: none;
-  
+
   p {
     font-size: 1.5rem;
     font-family: sans serif;

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Bio, Skill, WorkExp, ExpSwitcher } from "../components/resume"
+import { Bio, Skill, ExpSwitcher } from "../components/resume"
 import Layout from "../components/layout"
 import Panel from "../components/Panel"
 import SEO from "../components/seo"
@@ -32,17 +32,7 @@ export default function Resume({ data }) {
         </ul>
       </Panel>
       <Panel pos={"right"} ct={3}>
-        {/* <ul
-          style={{
-            height: "100%",
-            padding: "2rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            alignItems: "flex-start",
-          }}
-        > */}
-          <ExpSwitcher exp={exp} />
+        <ExpSwitcher exp={exp} />
       </Panel>
     </Layout>
   )

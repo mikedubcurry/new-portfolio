@@ -42,7 +42,7 @@ export default function ContactForm({ state, children, err }) {
   return (
     <Fields>
       <TextInput
-        className={`${err.input === 'name' ? 'error' : ''}`}
+        className={`${err.input === "name" ? "error" : ""}`}
         autoComplete="off"
         id="name"
         type="text"
@@ -53,7 +53,7 @@ export default function ContactForm({ state, children, err }) {
       <br />
 
       <TextInput
-        className={`${err.input === 'email' ? 'error' : ''}`}
+        className={`${err.input === "email" ? "error" : ""}`}
         id="email"
         autoComplete="off"
         type="text"
@@ -63,7 +63,7 @@ export default function ContactForm({ state, children, err }) {
       />
       <br />
       <TextArea
-        className={`${err.input === 'message' ? 'error' : ''}`}
+        className={`${err.input === "message" ? "error" : ""}`}
         id="message"
         autoComplete="off"
         rows="5"
