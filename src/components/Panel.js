@@ -68,13 +68,14 @@ const PanelBody = styled.div.attrs(props => ({
   ct: props.ct,
   pos: props.pos,
 }))`
-opacity: 0;
+  opacity: 0;
+  padding: 1rem 2rem;
   background: #f0f0f0;
   transition: all;
   height: 80%;
   width: calc(90% / ${props => props.ct});
   border-radius: 10px;
-  animation: ${fadeIn} 1s  ease forwards,
+  animation: ${fadeIn} 1s ease forwards,
     ${props => {
         switch (props.pos) {
           case "left":

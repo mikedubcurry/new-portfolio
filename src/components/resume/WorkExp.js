@@ -1,14 +1,21 @@
 import React from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 
-const Job = styled.li`
-  list-style: none;
+const Job = styled.div`
+  height: 95%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
   font-size: 0.9rem;
 
   h4 {
     font-size: 1rem;
+    text-decoration: solid underline #999999a0;
   }
-  p, span {
+  p,
+  span {
     padding-left: 1rem;
   }
   ul {

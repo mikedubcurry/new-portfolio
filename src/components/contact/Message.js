@@ -10,7 +10,7 @@ const FormButton = styled.button`
   margin-top: 2rem;
   border-radius: 10px;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0, 5rem 1rem;
   transition: all 0.2s;
   color: #333;
   font-family: sans serif;
@@ -44,13 +44,13 @@ const Verify = styled(FormButton)`
   }
 `
 
-function VerifyButton({ handleVerify }) {
-  return <Verify onClick={handleVerify}>Prove you're not a bot</Verify>
-}
+const VerifyButton = ({ handleVerify }) => (
+  <Verify onClick={handleVerify}>Click here if Human</Verify>
+)
 
-function SubmitButton({ handleSubmit }) {
-  return <Submit onClick={handleSubmit}>Submit</Submit>
-}
+const SubmitButton = ({ handleSubmit }) => (
+  <Submit onClick={handleSubmit}>Submit</Submit>
+)
 
 export default function Message() {
   const [token, setToken] = useState("")
@@ -94,24 +94,29 @@ export default function Message() {
       return
     }
 
-    const response = await fetch("http://localhost:3000/contact", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
+    try {
+      const response = await fetch("http://localhost:3000/contact", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      })
 
-    const json = await response.json()
+      const json = await response.json()
 
-    if (json.error) {
-      setErrors({ message: json.error })
-      return
+      if (json.error) {
+        setErrors({ message: json.error })
+        return
+      }
+      setName("")
+      setEmail("")
+      setMessage("")
+      setDisabled(true)
+    } catch (e) {
+      console.log(e)
+      setErrors({message: 'Contact form is out of order.'})
     }
-    setName("")
-    setEmail("")
-    setMessage("")
-    setDisabled(true)
   }
 
   return (
