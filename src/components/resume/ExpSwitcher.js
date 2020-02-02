@@ -6,16 +6,17 @@ import WorkExp from "./WorkExp"
 const Button = styled.button`
   font-size: 0.75rem;
   font-family: sans serif;
+  font-weight: bold;
   position: absolute;
   bottom: 1rem;
   border: none;
   cursor: pointer;
-  background: #555;
+  background: #aaa;
   transition: all 0.2s;
   color: #fff;
 
   &:hover {
-    background: #666;
+    background: #bbb;
   }
 `
 
@@ -23,12 +24,26 @@ const Left = styled(Button)`
   padding: 0.5rem 0.25rem 0.5rem 1.5rem;
   clip-path: polygon(0 50%, 100% 0, 100% 100%);
   left: 1rem;
+
+  &:hover {
+    left: 1.2rem;
+  }
+  &:active {
+    left: .8rem;
+  }
 `
 
 const Right = styled(Button)`
   clip-path: polygon(0 0, 100% 50%, 0 100%);
   right: 1rem;
   padding: 0.5rem 1.5rem 0.5rem 0.25rem;
+
+  &:hover {
+    right: 1.2rem;
+  }
+  &:active {
+    right: .8rem;
+  }
 `
 
 const Dot = styled.div`
@@ -40,6 +55,9 @@ const Dot = styled.div`
 
   &:hover {
     transform: scale(1.5);
+  }
+  &:active {
+    transform: scale(.8);
   }
 
   &.current {
@@ -80,8 +98,8 @@ export default function ExpSwitcher(props) {
       <Right onClick={() => dispatch({ type: "forwards" })}>next</Right>
       <Dots>
         {exp.map((_, i) => (
-          <li key={i} onClick={() => dispatch({ type: "set", payload: i })}>
-            <Dot className={`${state.curr === i ? "current" : ""}`}></Dot>
+          <li key={i}>
+            <Dot onClick={() => dispatch({ type: "set", payload: i })} className={`${state.curr === i ? "current" : ""}`}></Dot>
           </li>
         ))}
       </Dots>

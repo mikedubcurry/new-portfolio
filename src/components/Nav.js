@@ -26,6 +26,9 @@ const NavBar = styled.nav`
     &:hover {
       transform: translateY(-45%);
     }
+    &:active {
+      transform: translateY(-33%);
+    }
   }
 `
 
