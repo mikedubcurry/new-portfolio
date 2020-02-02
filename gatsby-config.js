@@ -1,3 +1,5 @@
+const dotenv = require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `MCurry`,
@@ -41,6 +43,38 @@ module.exports = {
         theme_color: `#006600`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: process.env.GITHUB_PAT,
+        graphQLQuery: `
+        {
+          user(login: "cryptofool13") {
+            pinnedRepositories(first: 10) {
+              edges {
+                node {
+                  name
+                  description
+                  url
+                  homepageUrl
+                  repositoryTopics(first: 10) {
+                    edges {
+                      node {
+                        topic {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        `,
+        variables: {},
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
