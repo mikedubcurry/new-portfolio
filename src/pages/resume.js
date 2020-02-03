@@ -2,9 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { Bio, Skill, ExpSwitcher } from "../components/resume"
-import Layout from "../components/layout"
-import Panel from "../components/Panel"
-import SEO from "../components/seo"
+import { Layout, SEO, Panel } from "../components"
 
 export default function Resume({ data }) {
   let { me, exp, skills } = data.resume
