@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Panel from "../components/Panel"
+import { Layout, SEO, Panel } from "../components/"
+import { TopicList } from "../components/projects"
 
 export default function Index({ data }) {
   const [topics, setTopics] = useState([])
@@ -31,7 +30,9 @@ export default function Index({ data }) {
   return (
     <Layout>
       <SEO title="HOME" />
-      <Panel pos={"left"} ct={2}></Panel>
+      <Panel pos={"left"} ct={2}>
+        <TopicList topics={topics} />
+      </Panel>
       <Panel pos={"right"} ct={2}></Panel>
     </Layout>
   )
