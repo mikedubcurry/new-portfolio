@@ -3,13 +3,13 @@ import styled from "styled-components"
 
 const SkillItem = styled.li`
   list-style: none;
+  font-family: sans serif;
 
   p {
     font-size: 1.5rem;
-    font-family: sans serif;
   }
   div {
-    font-size: 1rem;
+    font-size: .9rem;
     text-align: center;
   }
 `
