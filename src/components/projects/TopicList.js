@@ -5,17 +5,32 @@ const GridList = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 50%;
+  height: 60%;
   width: 100%;
   margin: 0 auto;
   justify-items: center;
   align-items: center;
 
   li {
+    font-family: sans serif;
+    box-sizing: content-box;
     padding: 0.5rem;
+    transition: background 0.3s;
+    width: 60%;
+    text-align: center;
 
+
+
+    &:hover {
+      background: #ccc;
+    }
     &:focus {
-      border: solid 1px red;
+      outline: solid 2px #44b;
+      background: #fff;
+    }
+    &.selected {
+      color: white;
+      background: #44b;
     }
   }
 `
@@ -23,36 +38,48 @@ const GridList = styled.ul`
 export default function TopicList({ topics, state }) {
   const [selected, setSelected] = state
 
-  const PronounCase = str => `${str[0].toUpperCase()}${str.slice(1)}`
-  console.log(selected)
   const handleEnter = e => {
     if (e.key === "Enter") {
-      setSelected(e.target.innerText.replace(/\//g, "-").toLowerCase())
+      if (e.target.innerText === "All Projects") {
+        return setSelected("")
+      }
+
+      return setSelected(unFormatTopic(e.target.innerText))
     }
   }
+
+  const formatTopic = str => {
+    return /html/.test(str)
+      ? str.replace(/-/g, "/").toUpperCase()
+      : `${str[0].toUpperCase()}${str.slice(1)}`
+  }
+
+  const unFormatTopic = str => {
+    return str.replace(/\//g, "-").toLowerCase()
+  }
+
   return (
     <>
       <h1>Select a topic to filter projects</h1>
       <GridList>
         {topics.map((topic, i) => (
           <li
+            className={selected === topic ? "selected" : ""}
             onKeyPress={handleEnter}
             tabIndex={0}
             onClick={() => setSelected(topic)}
             key={i}
           >
-            {/html/.test(topic)
-              ? topic.replace(/-/g, "/").toUpperCase()
-              : PronounCase(topic)}
+            {formatTopic(topic)}
           </li>
         ))}
         <li
           onKeyPress={handleEnter}
           tabIndex={0}
           onClick={() => setSelected("")}
-          onKeyPress={e => (e.key === "Enter" ? setSelected("") : null)}
+          onKeyPress={handleEnter}
         >
-          All projects
+          All Projects
         </li>
       </GridList>
     </>
