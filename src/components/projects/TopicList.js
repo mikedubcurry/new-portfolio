@@ -12,21 +12,48 @@ const GridList = styled.ul`
   align-items: center;
 
   li {
-    padding: .5rem;
+    padding: 0.5rem;
+
+    &:focus {
+      border: solid 1px red;
+    }
   }
 `
 
 export default function TopicList({ topics, state }) {
   const [selected, setSelected] = state
+
+  const PronounCase = str => `${str[0].toUpperCase()}${str.slice(1)}`
   console.log(selected)
+  const handleEnter = e => {
+    if (e.key === "Enter") {
+      setSelected(e.target.innerText.replace(/\//g, "-").toLowerCase())
+    }
+  }
   return (
     <>
       <h1>Select a topic to filter projects</h1>
       <GridList>
         {topics.map((topic, i) => (
-          <li onClick={() => setSelected(topic)} key={i}>{topic}</li>
+          <li
+            onKeyPress={handleEnter}
+            tabIndex={0}
+            onClick={() => setSelected(topic)}
+            key={i}
+          >
+            {/html/.test(topic)
+              ? topic.replace(/-/g, "/").toUpperCase()
+              : PronounCase(topic)}
+          </li>
         ))}
-        <li onClick={() => setSelected('')}>All projects</li>
+        <li
+          onKeyPress={handleEnter}
+          tabIndex={0}
+          onClick={() => setSelected("")}
+          onKeyPress={e => (e.key === "Enter" ? setSelected("") : null)}
+        >
+          All projects
+        </li>
       </GridList>
     </>
   )

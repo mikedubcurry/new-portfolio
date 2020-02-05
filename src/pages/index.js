@@ -31,11 +31,12 @@ export default function Index({ data }) {
         })
       })
     }
+
     // a double nested loop repeated topics.length times.
     // done only because repos.length <= 6, and each repo has at most 3 topics.
     // worst case is 216 renders
     // there has to be a better way
-  }, [topics])
+  }, [topics, repos])
   return (
     <Layout>
       <SEO title="HOME" />

@@ -15,7 +15,8 @@ const Button = styled.button`
   transition: all 0.2s;
   color: #fff;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: #bbb;
   }
 `
@@ -25,11 +26,12 @@ const Left = styled(Button)`
   clip-path: polygon(0 50%, 100% 0, 100% 100%);
   left: 1rem;
 
-  &:hover {
+  &:hover,
+  &:focus {
     left: 1.2rem;
   }
   &:active {
-    left: .8rem;
+    left: 0.8rem;
   }
 `
 
@@ -38,11 +40,12 @@ const Right = styled(Button)`
   right: 1rem;
   padding: 0.5rem 1.5rem 0.5rem 0.25rem;
 
-  &:hover {
+  &:hover,
+  &:focus {
     right: 1.2rem;
   }
   &:active {
-    right: .8rem;
+    right: 0.8rem;
   }
 `
 
@@ -57,7 +60,7 @@ const Dot = styled.div`
     transform: scale(1.5);
   }
   &:active {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
 
   &.current {
@@ -99,7 +102,10 @@ export default function ExpSwitcher(props) {
       <Dots>
         {exp.map((_, i) => (
           <li key={i}>
-            <Dot onClick={() => dispatch({ type: "set", payload: i })} className={`${state.curr === i ? "current" : ""}`}></Dot>
+            <Dot
+              onClick={() => dispatch({ type: "set", payload: i })}
+              className={`${state.curr === i ? "current" : ""}`}
+            ></Dot>
           </li>
         ))}
       </Dots>
