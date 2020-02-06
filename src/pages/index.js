@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import { Layout, SEO, Panel } from "../components/"
-import { TopicList } from "../components/projects"
+import { TopicList, ProjectList } from "../components/projects"
 
 const Topics = styled.div`
   height: 100%;
@@ -45,7 +45,9 @@ export default function Index({ data }) {
           <TopicList topics={topics} state={[selected, setSelected]} />
         </Topics>
       </Panel>
-      <Panel pos={"right"} ct={2}></Panel>
+      <Panel pos={"right"} ct={2}>
+        <ProjectList repos={repos} />
+      </Panel>
     </Layout>
   )
 }
