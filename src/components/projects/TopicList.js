@@ -19,8 +19,6 @@ const GridList = styled.ul`
     width: 60%;
     text-align: center;
 
-
-
     &:hover {
       background: #ccc;
     }
@@ -46,16 +44,6 @@ export default function TopicList({ topics, state }) {
 
       return setSelected(unFormatTopic(e.target.innerText))
     }
-  }
-
-  const formatTopic = str => {
-    return /html/.test(str)
-      ? str.replace(/-/g, "/").toUpperCase()
-      : `${str[0].toUpperCase()}${str.slice(1)}`
-  }
-
-  const unFormatTopic = str => {
-    return str.replace(/\//g, "-").toLowerCase()
   }
 
   return (
@@ -84,4 +72,20 @@ export default function TopicList({ topics, state }) {
       </GridList>
     </>
   )
+}
+
+export function formatTopic(str) {
+  if(/html/.test(str)) {
+    return str.replace(/-/g, '/').toUpperCase()
+  }
+
+  let formatted = str.replace(/-/g, ' ')
+  return `${formatted[0].toUpperCase()}${formatted.slice(1)}`
+  // return /html/.test(str)
+  //   ? str.replace(/-/g, "/").toUpperCase()
+  //   : `${str[0].toUpperCase()}${str.slice(1)}`
+}
+
+function unFormatTopic(str) {
+  return str.replace(/\//g, "-").toLowerCase()
 }
