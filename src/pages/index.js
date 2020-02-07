@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import { Layout, SEO, Panel } from "../components/"
 import { TopicList, ProjectList } from "../components/projects"
-
-const Topics = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-`
 
 export default function Index({ data }) {
   const [topics, setTopics] = useState([])
@@ -41,12 +32,10 @@ export default function Index({ data }) {
     <Layout>
       <SEO title="HOME" />
       <Panel pos={"left"} ct={2}>
-        <Topics>
-          <TopicList topics={topics} state={[selected, setSelected]} />
-        </Topics>
+        <TopicList topics={topics} state={[selected, setSelected]} />
       </Panel>
       <Panel pos={"right"} ct={2}>
-        <ProjectList repos={repos} />
+        <ProjectList selected={selected} repos={repos} />
       </Panel>
     </Layout>
   )
