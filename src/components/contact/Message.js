@@ -33,6 +33,11 @@ const Submit = styled(FormButton)`
   &:hover {
     background: lightblue;
   }
+  &:focus {
+    outline: none;
+    border: solid 2px #44b;
+    border-radius: 8px;
+  }
 `
 
 const Verify = styled(FormButton)`
@@ -41,6 +46,11 @@ const Verify = styled(FormButton)`
 
   &:hover {
     background: orange;
+  }
+  &:focus {
+    outline: none;
+    border: solid 2px #44b;
+    border-radius: 8px;
   }
 `
 

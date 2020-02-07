@@ -34,8 +34,9 @@ const GridList = styled.div`
         background: #ccc;
       }
       &:focus {
-        outline: solid 2px #44b;
-        outline-radius: 8px;
+        outline: none;
+        border: solid 2px #44b;
+        border-radius: 8px;
         background: #fff;
       }
       &.selected {

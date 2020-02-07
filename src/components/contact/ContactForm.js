@@ -8,6 +8,11 @@ const TextInput = styled.input`
   border: solid 1px #bbb;
   background: #ccc;
 
+  &:focus {
+    outline: none;
+    border: solid 2px #44b;
+    border-radius: 8px;
+  }
   &.error {
     background: #fa545caa;
   }
@@ -20,6 +25,11 @@ const TextArea = styled.textarea`
   background: #ccc;
   resize: none;
 
+  &:focus {
+    outline: none;
+    border: solid 2px #44b;
+    border-radius: 8px;
+  }
   &.error {
     background: #fa545caa;
   }
