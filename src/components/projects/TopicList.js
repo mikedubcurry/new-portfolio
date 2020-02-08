@@ -27,7 +27,7 @@ const GridList = styled.div`
       padding: 0.5rem;
       transition: background 0.2s;
       border-radius: 8px;
-      width: 60%;
+      width: 80%;
       text-align: center;
 
       &:hover {
@@ -44,6 +44,8 @@ const GridList = styled.div`
         background: #44b;
       }
     }
+  }
+  @media screen and (min-width: 630px) {
   }
 `
 

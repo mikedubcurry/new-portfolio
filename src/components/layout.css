@@ -84,11 +84,13 @@ body {
 
 main {
   width: 100%;
+  overflow: hidden;
   height: 90%;
   padding: 0;
   margin: 0;
   background: #ddd;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-radius: 0;
@@ -106,6 +108,7 @@ main {
     z-index: 1;
   }
   main {
+    flex-direction: row;
     width: 90%;
     height: 85vh;
     position: absolute;

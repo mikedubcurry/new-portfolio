@@ -8,8 +8,8 @@ const BurgerBtn = styled.div`
   height: 3rem;
   position: fixed;
   z-index: 5;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  left: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,7 +50,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background: #7700ee95;
+  background: #7700eeba;
   flex-direction: column;
   transition: all 0.5s;
   transform: ${props => (props.open ? "translateY(0)" : "translateY(-200%)")};
@@ -65,7 +65,7 @@ const NavBar = styled.nav`
     transition: all 0.3s;
 
     &.current {
-      color: darkblue;
+      color: yellow;
     }
 
     &:active {
