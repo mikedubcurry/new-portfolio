@@ -112,3 +112,21 @@ main {
   background-image: linear-gradient(to top, #69626d, #000);
   clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 }
+
+@media screen and (max-width: 630px) {
+  main {
+    width: 100%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+    background: #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    position: unset;
+  }
+  .top-of-box {
+    display: none; 
+  }
+}

@@ -30,6 +30,24 @@ const NavBar = styled.nav`
       transform: translateY(-33%);
     }
   }
+  @media screen and (max-width: 630px) {
+    width: 100%;
+    position: unset;
+    flex-direction: column;
+
+    &.current {
+      color: yellow;
+    }
+
+    &:hover {
+      transform: none;
+    }
+
+    &:active {
+      transform: none;
+      color: orange;
+    }
+  }
 `
 
 const Nav = () => (
