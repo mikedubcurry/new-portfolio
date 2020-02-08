@@ -1,0 +1,65 @@
+{
+  "me": {
+    "name": "Michael Curry Jr.",
+    "email": "michaelcurry95@gmail.com",
+    "github": "cryptofool13",
+    "bio": "A breif bio goes here. I dont want it to get too long. Just a few sentences."
+  },
+  "exp": [
+    {
+      "title": "Asst. Department Manager",
+      "company": "Price Chopper/Market 32",
+      "start": "2016-07-16",
+      "end": null,
+      "current": true,
+      "duties": [
+        "Managed fresh seafood department.",
+        "Trained employees to work efficiently in a fast paced environment."
+      ]
+    },
+    {
+      "title": "Lorem Ipsum Dolor",
+      "company": "Leverage agile frameworks",
+      "start": "2013-02-24",
+      "end": "2016-07-10",
+      "current": false,
+      "duties": [
+        "Iterative approaches to corporate strategy foster collaborative thinking.",
+        "holistic world view of disruptive innovation."
+      ]
+    },
+    {
+      "title": "Schmlorem Dipsum Color",
+      "company": "Completely Made Up",
+      "start": "2012-03-21",
+      "end": "2013-02-01",
+      "current": false,
+      "duties": [
+        "Iterative approaches to corporate strategy foster collaborative thinking.",
+        "holistic world view of disruptive innovation."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "topic": "JavaScript",
+      "exp": 3
+    },
+    {
+      "topic": "React.js",
+      "exp": 3
+    },
+    {
+      "topic": "Node.js",
+      "exp": 3
+    },
+    {
+      "topic": "MongoDb",
+      "exp": 2
+    },
+    {
+      "topic": "PostgresSQL",
+      "exp": 1
+    }
+  ]
+}

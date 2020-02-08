@@ -48,7 +48,6 @@ export const pageQuery = graphql`
     resume: contentJson {
       me {
         name
-        email
         github
         bio
       }
