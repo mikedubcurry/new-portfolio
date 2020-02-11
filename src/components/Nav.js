@@ -61,7 +61,8 @@ const NavBar = styled.nav`
     color: white;
     text-decoration: none;
     font-size: 2rem;
-    font-family: sans serif;
+    font-family: 'Montserrat';
+    font-weight: bold;
     transition: all 0.3s;
 
     &.current {
@@ -90,7 +91,6 @@ const NavBar = styled.nav`
       text-decoration: none;
       font-size: 2rem;
       transform: translateY(-33%);
-      font-family: sans serif;
       transition: all 0.3s;
 
       &.current {

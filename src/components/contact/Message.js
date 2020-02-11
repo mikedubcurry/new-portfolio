@@ -105,7 +105,7 @@ export default function Message() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/contact", {
+      const response = await fetch("http://157.245.124.219:3001/contact", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

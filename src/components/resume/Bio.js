@@ -12,9 +12,10 @@ const Frame = styled.div`
 
 const Text = styled.div`
   padding: 1rem;
-
+  font-family: 'Roboto';
+  
   h1 {
-    font-family: sans serif;
+    font-family: 'Montserrat';
     font-size: 1.5rem;
     text-decoration: solid underline #999999a0;
   }
@@ -24,7 +25,6 @@ const Text = styled.div`
   }
   a {
     color: #353535;
-    font-family: sans serif;
   }
 `
 

@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../../static/fonts/roboto/Roboto-Regular.woff") format("woff2"),
+    url("../../static/fonts/roboto/Roboto-Regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/montserrat/Montserrat-Regular.woff")
+      format("woff2"),
+    url("../../static/fonts/montserrat/Montserrat-Regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -101,7 +117,6 @@ main {
 }
 
 @media screen and (min-width: 630px) {
-
   body {
     background-color: #7700ee;
     position: relative;

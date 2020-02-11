@@ -3,10 +3,12 @@ import styled from "styled-components"
 
 import {formatTopic} from './TopicList'
 
-const ProjectView = styled.div``
+const ProjectView = styled.div`
+font-family: 'Roboto';
+`
 
 export default function Project({ repo }) {
-  const { name, description, homepageUrl, url, topics } = repo
+  const { name, description } = repo
 
   const shortedText = str => {
     if(!str) {

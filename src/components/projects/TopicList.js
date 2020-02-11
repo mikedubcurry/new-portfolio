@@ -8,7 +8,7 @@ const GridList = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   h1 {
-    font-family: sans serif;
+    font-family: "Roboto";
     text-align: center;
   }
   ul {
@@ -22,13 +22,15 @@ const GridList = styled.div`
     align-items: center;
 
     li {
-      font-family: sans serif;
+      font-family: "Montserrat";
+      font-weight: bold;
       box-sizing: content-box;
       padding: 0.5rem;
       transition: background 0.2s;
       border-radius: 8px;
       width: 80%;
       text-align: center;
+      border: 2px #ccc solid;
 
       &:hover {
         background: #ccc;
@@ -99,9 +101,6 @@ export function formatTopic(str) {
 
   let formatted = str.replace(/-/g, " ")
   return `${formatted[0].toUpperCase()}${formatted.slice(1)}`
-  // return /html/.test(str)
-  //   ? str.replace(/-/g, "/").toUpperCase()
-  //   : `${str[0].toUpperCase()}${str.slice(1)}`
 }
 
 function unFormatTopic(str) {
