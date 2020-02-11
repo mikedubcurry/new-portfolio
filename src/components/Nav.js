@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+
 const BurgerBtn = styled.div`
   outline: none;
   width: 3rem;
@@ -61,7 +62,7 @@ const NavBar = styled.nav`
     color: white;
     text-decoration: none;
     font-size: 2rem;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: bold;
     transition: all 0.3s;
 
@@ -107,20 +108,28 @@ const NavBar = styled.nav`
   }
 `
 
-const Nav = () => {
-  const [open, setOpen] = useState(false)
+const Nav = ({state}) => {
+  const [open, setOpen] = state
 
   return (
     <>
       <MenuBtn state={[open, setOpen]} />
       <NavBar open={open}>
-        <Link activeClassName="current" to="/">
+        <Link onClick={() => setOpen(false)} activeClassName="current" to="/">
           PROJECTS
         </Link>
-        <Link activeClassName="current" to="/resume">
+        <Link
+          onClick={() => setOpen(false)}
+          activeClassName="current"
+          to="/resume"
+        >
           RESUME
         </Link>
-        <Link activeClassName="current" to="/contact">
+        <Link
+          onClick={() => setOpen(false)}
+          activeClassName="current"
+          to="/contact"
+        >
           CONTACT
         </Link>
       </NavBar>

@@ -15,7 +15,7 @@ const GridList = styled.div`
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 60%;
+    height: 50%;
     width: 100%;
     margin: 0 auto;
     justify-items: center;

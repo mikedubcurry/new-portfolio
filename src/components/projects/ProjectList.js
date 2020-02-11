@@ -1,6 +1,14 @@
 import React from "react"
+import styled from 'styled-components'
 
 import Project from "./Project"
+
+const Projects = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+`
 
 export default function ProjectList({ repos, selected }) {
   const filterItems = (items, thing) => {
@@ -13,10 +21,10 @@ export default function ProjectList({ repos, selected }) {
 		})
 	}
   return (
-    <div>
+    <Projects>
       {filterItems(repos, selected).map(({ node }, i) => (
         <Project repo={node} key={i} />
       ))}
-    </div>
+    </Projects>
   )
 }

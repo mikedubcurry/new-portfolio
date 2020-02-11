@@ -65,18 +65,23 @@ const fadeIn = keyframes`
 `
 
 const PanelBody = styled.div.attrs(props => ({
+  first: props.first,
   ct: props.ct,
   pos: props.pos,
 }))`
-  height: calc(100vh - 7rem);
+height:60vh;
+  // min-height: 50vh;
   width: 90%;
-  margin: 7rem 0.5rem 0 0.5rem;
+  margin: 0 0.5rem;
+  margin-bottom: 1rem;
   opacity: 0;
   padding: 1rem 2rem;
   background: #f0f0f0;
   transition: all;
   border-radius: 10px;
   animation: ${fadeIn} 1s ease forwards;
+
+  ${props => (props.first ? "margin-top: 7rem;" : "")}
 
   @media screen and (min-width: 630px) {
     margin: 0;
@@ -113,9 +118,9 @@ const PanelBody = styled.div.attrs(props => ({
   }
 `
 
-export default function Panel({ children, ct, pos }) {
+export default function Panel({ children, first, ct, pos }) {
   return (
-    <PanelBody pos={pos} ct={ct}>
+    <PanelBody first={first} pos={pos} ct={ct}>
       {children}
     </PanelBody>
   )
