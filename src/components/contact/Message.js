@@ -105,7 +105,7 @@ export default function Message() {
     }
 
     try {
-      const response = await fetch("http://157.245.124.219:3001/contact", {
+      const response = await fetch("https://mcurry.xyz/contact", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
