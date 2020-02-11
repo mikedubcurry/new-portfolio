@@ -7,8 +7,8 @@ const Button = styled.button`
   font-size: 0.75rem;
   font-family: sans serif;
   font-weight: bold;
-  position: absolute;
-  bottom: 1rem;
+  // position: relative;
+  // bottom: 1rem;
   border: none;
   cursor: pointer;
   background: #aaa;
@@ -24,7 +24,7 @@ const Button = styled.button`
 const Left = styled(Button)`
   padding: 0.5rem 0.25rem 0.5rem 1.5rem;
   clip-path: polygon(0 50%, 100% 0, 100% 100%);
-  left: 1rem;
+  // left: 1rem;
 
   &:hover,
   &:focus {
@@ -37,7 +37,7 @@ const Left = styled(Button)`
 
 const Right = styled(Button)`
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  right: 1rem;
+  // right: 1rem;
   padding: 0.5rem 1.5rem 0.5rem 0.25rem;
 
   &:hover,
@@ -69,9 +69,9 @@ const Dot = styled.div`
 `
 
 const Dots = styled.ul`
-  position: absolute;
-  left: 25%;
-  bottom: 1.5rem;
+  // position: relative;
+  // left: 25%;
+  // bottom: 1.5rem;
   width: 50%;
   height: 1rem;
 
@@ -89,6 +89,12 @@ const Dots = styled.ul`
     cursor: pointer;
   }
 `
+const Controls = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`
 
 export default function ExpSwitcher(props) {
   let exp = props.exp
@@ -97,18 +103,20 @@ export default function ExpSwitcher(props) {
   return (
     <>
       <WorkExp exp={exp[state.curr]} />
-      <Left onClick={() => dispatch({ type: "backwards" })}>prev</Left>
-      <Right onClick={() => dispatch({ type: "forwards" })}>next</Right>
-      <Dots>
-        {exp.map((_, i) => (
-          <li key={i}>
-            <Dot
-              onClick={() => dispatch({ type: "set", payload: i })}
-              className={`${state.curr === i ? "current" : ""}`}
-            ></Dot>
-          </li>
-        ))}
-      </Dots>
+      <Controls>
+        <Left onClick={() => dispatch({ type: "backwards" })}>prev</Left>
+        <Dots>
+          {exp.map((_, i) => (
+            <li key={i}>
+              <Dot
+                onClick={() => dispatch({ type: "set", payload: i })}
+                className={`${state.curr === i ? "current" : ""}`}
+              ></Dot>
+            </li>
+          ))}
+        </Dots>
+        <Right onClick={() => dispatch({ type: "forwards" })}>next</Right>
+      </Controls>
     </>
   )
 }
