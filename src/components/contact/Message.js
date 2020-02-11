@@ -79,9 +79,13 @@ export default function Message() {
       setErrors({ message: "ReCaptcha is not working in your browser." })
       return
     }
-    const result = await executeRecaptcha("contact")
-
-    setToken(result)
+    try {
+      const result = await executeRecaptcha("contact")
+      setToken(result)
+    } catch (e) {
+      setErrors(e)
+      console.log(e)
+    }
   }
 
   const handleSubmit = async e => {
@@ -105,7 +109,7 @@ export default function Message() {
     }
 
     try {
-      const response = await fetch("https://mcurry.xyz/contact", {
+      const response = await fetch("https://www.mcurry.xyz/contact", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +120,8 @@ export default function Message() {
       const json = await response.json()
 
       if (json.error) {
-        setErrors({ message: json.error })
+        console.log(json.error)
+        setErrors({ message: json.error.message })
         return
       }
       setName("")
