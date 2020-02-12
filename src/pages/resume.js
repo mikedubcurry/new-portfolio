@@ -10,7 +10,7 @@ export default function Resume({ data }) {
   return (
     <Layout>
       <SEO title="RESUME" />
-      <Panel pos={"left"} ct={3}>
+      <Panel first={true} pos={"left"} ct={3}>
         <Bio selfie={data.bioImage.childImageSharp} me={me} />
       </Panel>
       <Panel pos={"center"} ct={3}>
