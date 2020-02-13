@@ -9,15 +9,15 @@ const Job = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   font-size: 0.9rem;
-  font-family: 'Roboto';
-  
+  font-family: "Roboto";
+
   h4 {
     font-size: 1rem;
     text-decoration: solid underline #999999a0;
   }
   p {
     font-size: 1rem;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
   }
   p,
   span {

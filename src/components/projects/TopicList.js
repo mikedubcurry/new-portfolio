@@ -10,6 +10,9 @@ const GridList = styled.div`
   h1 {
     font-family: "Roboto";
     text-align: center;
+    &::after {
+      content: " below";
+    }
   }
   ul {
     list-style: none;

@@ -5,7 +5,7 @@ import Nav from "./Nav"
 
 const Layout = ({ children }) => {
   const [navOpen, setNavOpen] = useState(false)
-  
+
   return (
     <>
       <Nav state={[navOpen, setNavOpen]} />

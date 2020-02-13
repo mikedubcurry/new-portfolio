@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
 
 const BurgerBtn = styled.div`
   outline: none;
@@ -108,7 +107,7 @@ const NavBar = styled.nav`
   }
 `
 
-const Nav = ({state}) => {
+const Nav = ({ state }) => {
   const [open, setOpen] = state
 
   return (
