@@ -4,12 +4,18 @@ import styled from "styled-components"
 import { formatTopic } from "./TopicList"
 
 const ProjectView = styled.div`
-  font-family: "Roboto";
-
+  font-family: Montserrat;
+  font-style: oblique;
   a {
     color: unset;
     cursor: pointer;
-    color: #353535;
+    color: #7700ee;
+  }
+  p {
+    padding: 0 0.5rem;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bolder;
   }
 `
 
@@ -32,7 +38,7 @@ export default function Project({ repo }) {
   return (
     <ProjectView>
       <h3>
-        <a target="_blank" href={url}>
+        <a target="_blank" rel="noopener noreferrer" href={url}>
           {formatTopic(name)}
         </a>
       </h3>
