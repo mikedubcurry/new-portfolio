@@ -2,7 +2,7 @@
   "me": {
     "name": "Michael Curry Jr.",
     "github": "cryptofool13",
-    "bio": "A breif bio goes here. I dont want it to get too long. Just a few sentences."
+    "bio": "Full stack developer"
   },
   "exp": [
     {
@@ -22,9 +22,7 @@
       "start": "2015-07-19",
       "end": "2015-12-03",
       "current": false,
-      "duties": [
-        "Serve customers and clean seafood department."
-      ]
+      "duties": ["Serve customers and clean seafood department."]
     }
   ],
   "skills": [
