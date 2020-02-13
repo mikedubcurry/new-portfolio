@@ -12,10 +12,10 @@ const Frame = styled.div`
 
 const Text = styled.div`
   padding: 1rem;
-  font-family: 'Roboto';
-  
+  font-family: "Roboto";
+
   h1 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-size: 1.5rem;
     text-decoration: solid underline #999999a0;
   }
@@ -40,11 +40,11 @@ export default function Bio({ me, selfie }) {
       </Frame>
       <Text>
         <h1>{me.name}</h1>
+        <p>{me.bio}</p>
         <p className="gh">
           Github Profile:{" "}
           <a href={`https://github.com/${me.github}`}>{me.github}</a>
         </p>
-        <p>{me.bio}</p>
       </Text>
     </>
   )
