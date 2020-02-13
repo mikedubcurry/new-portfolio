@@ -31,11 +31,11 @@ export default function Index({ data }) {
   return (
     <Layout>
       <SEO title="HOME" />
-      <Panel first={true} pos={"right"} ct={2}>
-        <ProjectList selected={selected} repos={repos} />
-      </Panel>
-      <Panel pos={"left"} ct={2}>
+      <Panel first={true} pos={"left"} ct={2}>
         <TopicList topics={topics} state={[selected, setSelected]} />
+      </Panel>
+      <Panel pos={"right"} ct={2}>
+        <ProjectList selected={selected} repos={repos} />
       </Panel>
     </Layout>
   )
