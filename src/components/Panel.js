@@ -69,7 +69,7 @@ const PanelBody = styled.div.attrs(props => ({
   ct: props.ct,
   pos: props.pos,
 }))`
-height:60vh;
+height:90vh;
   // min-height: 50vh;
   width: 90%;
   margin: 0 0.5rem;
