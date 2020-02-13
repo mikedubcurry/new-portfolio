@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <Layout>
       <GoogleReCaptchaProvider reCaptchaKey="6LcRsdMUAAAAABOu-tDA3v-sHfvfcM1zgQZdj_Uk">
-        <SEO title="CONTACT" />
+        <SEO title="Contact" />
         <Panel first={true} pos={"left"} ct={2}>
           <Info />
         </Panel>

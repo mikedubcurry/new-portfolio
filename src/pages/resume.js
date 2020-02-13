@@ -9,7 +9,7 @@ export default function Resume({ data }) {
 
   return (
     <Layout>
-      <SEO title="RESUME" />
+      <SEO title="Resume" />
       <Panel first={true} pos={"left"} ct={3}>
         <Bio selfie={data.bioImage.childImageSharp} me={me} />
       </Panel>

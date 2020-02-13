@@ -30,7 +30,7 @@ export default function Index({ data }) {
   }, [topics, repos])
   return (
     <Layout>
-      <SEO title="HOME" />
+      <SEO title="Projects" />
       <Panel first={true} pos={"left"} ct={2}>
         <TopicList topics={topics} state={[selected, setSelected]} />
       </Panel>
