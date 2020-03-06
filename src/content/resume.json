@@ -2,15 +2,23 @@
   "me": {
     "name": "Michael Curry Jr.",
     "github": "cryptofool13",
-    "bio": "Full stack developer based in Albany, NY. I am currently seeking an junior-level position."
+    "bio": "Full stack developer based in Albany, NY. I am not currently seeking any employment opportunities."
   },
   "exp": [
+    {
+      "title": "JavaScript Application Developer",
+      "company": "Atlas Copco",
+      "start": "2020-03-09",
+      "end": null,
+      "current": true,
+      "duties": []
+    },
     {
       "title": "Asst. Department Manager",
       "company": "Price Chopper/Market 32",
       "start": "2016-07-16",
-      "end": null,
-      "current": true,
+      "end": "2020-03-06",
+      "current": false,
       "duties": [
         "Managed fresh seafood department.",
         "Trained employees to work efficiently in a fast paced environment."
