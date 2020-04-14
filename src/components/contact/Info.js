@@ -9,7 +9,7 @@ const Text = styled.div`
 
   p {
     font-size: 1rem;
-    font-family: sans serif;
+    font-family: "Roboto", sans serif;
   }
 
   h1 {
