@@ -121,7 +121,7 @@ export default function Message() {
 
       if (json.error) {
         console.log(json.error)
-        setErrors({ message: json.error.message })
+        setErrors({ message: json.error.message, error: json.error.err })
         return
       }
       setName("")
