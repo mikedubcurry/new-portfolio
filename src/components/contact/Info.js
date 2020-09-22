@@ -24,7 +24,7 @@ export default function Info() {
     <Text>
       <h1>Getting ahold of me</h1>
       <p>
-        I am currently seeking full-time employment opportunities or freelance
+        I am not currently seeking full-time employment opportunities or freelance
         work so please feel free to send me a message. I will get back to you
         within a day or two.
       </p>

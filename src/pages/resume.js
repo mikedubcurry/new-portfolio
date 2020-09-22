@@ -55,7 +55,7 @@ export const pageQuery = graphql`
         title
         company
         start(formatString: "MMM D, Y")
-        end(formatString: "MMM D, Y")
+        end
         duties
         current
       }

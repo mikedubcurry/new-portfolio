@@ -51,19 +51,21 @@ module.exports = {
         token: process.env.GITHUB_PAT,
         graphQLQuery: `
         {
-          user(login: "cryptofool13") {
-            pinnedRepositories(first: 10) {
+          user(login: "mikedubcurry") {
+            pinnedItems(first: 10) {
               edges {
                 node {
-                  name
-                  description
-                  url
-                  homepageUrl
-                  repositoryTopics(first: 10) {
-                    edges {
-                      node {
-                        topic {
-                          name
+                  ... on Repository {
+                    name
+                    description
+                    url
+                    homepageUrl
+                    repositoryTopics(first: 10) {
+                      edges {
+                        node {
+                          topic {
+                            name
+                          }
                         }
                       }
                     }

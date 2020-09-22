@@ -8,7 +8,7 @@ export default function Index({ data }) {
   const [topics, setTopics] = useState([])
   const [selected, setSelected] = useState("")
 
-  const repos = data.githubData.data.user.pinnedRepositories.edges
+  const repos = data.githubData.data.user.pinnedItems.edges
 
   useEffect(() => {
     // go through each repo
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
     githubData {
       data {
         user {
-          pinnedRepositories {
+          pinnedItems {
             edges {
               node {
                 name
