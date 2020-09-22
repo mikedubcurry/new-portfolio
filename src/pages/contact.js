@@ -14,7 +14,7 @@ export default function Contact() {
         </Panel>
         <Panel pos={"right"} ct={2}>
           {/* <Message /> */}
-          <p>Sorry but the contact form is currently under development. You can still reach me on Twitter <a href="www.twitter.com/mikedubcurry">@mikedubcurry</a></p>
+          <p>Sorry but the contact form is currently under development. You can still reach me on Twitter <a href="https://www.twitter.com/mikedubcurry">@mikedubcurry</a></p>
         </Panel>
       </GoogleReCaptchaProvider>
     </Layout>
