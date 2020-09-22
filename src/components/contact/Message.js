@@ -120,7 +120,7 @@ export default function Message() {
       const json = await response.json()
 
       if (json.error) {
-        console.log(json.error)
+        console.log(json.error, json.err)
         setErrors({ message: json.error.message, error: json.error.err })
         return
       }
