@@ -17,6 +17,9 @@ const Text = styled.div`
     font-size: 1.5rem;
     text-decoration: solid underline #999999a0;
   }
+  .not-today {
+    text-decoration: line-through;
+  }
 `
 
 export default function Info() {
@@ -28,7 +31,7 @@ export default function Info() {
         opportunities. If you still want to reach out to me, I will get back to
         you within a day or two.
       </p>
-      <p>
+      <p className='not-today'>
         Just enter your name, an email I can reach you at and a brief message.
       </p>
     </Text>
