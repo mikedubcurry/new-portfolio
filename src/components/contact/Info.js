@@ -9,7 +9,7 @@ const Text = styled.div`
 
   p {
     font-size: 1rem;
-    font-family: sans serif;
+    font-family: "Roboto", sans serif;
   }
 
   h1 {
@@ -24,12 +24,12 @@ export default function Info() {
     <Text>
       <h1>Getting ahold of me</h1>
       <p>
-        I am not currently seeking full-time employment opportunities or freelance
-        work so please feel free to send me a message. I will get back to you
-        within a day or two.
+        I am currently happily employed and am not looking for new
+        opportunities. If you still want to reach out to me, I will get back to
+        you within a day or two.
       </p>
       <p>
-        Just enter your name, an email I can reach you at and a brief message.{" "}
+        Just enter your name, an email I can reach you at and a brief message.
       </p>
     </Text>
   )
